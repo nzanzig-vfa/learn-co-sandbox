@@ -1,0 +1,30 @@
+display_information:
+  name: OnsiteOS
+  description: Interactive onsite-planning assistant backed by your Onsite managed agent.
+  background_color: "#2c2d30"
+features:
+  bot_user:
+    display_name: OnsiteOS
+    always_online: true
+oauth_config:
+  scopes:
+    bot:
+      - app_mentions:read   # see @OnsiteOS mentions
+      - chat:write          # reply in threads
+      - channels:history    # read replies in public channels it's in
+      - groups:history       # ...and private channels
+      - im:history          # DMs
+      - files:read          # read attachments you send
+      - files:write         # post generated files (itineraries, docs)
+settings:
+  event_subscriptions:
+    bot_events:
+      - app_mention
+      - message.channels
+      - message.groups
+      - message.im
+  interactivity:
+    is_enabled: true
+  socket_mode_enabled: true   # no public URL needed
+  org_deploy_enabled: false
+  token_rotation_enabled: false
